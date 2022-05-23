@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  detallebanco:
+      image: demo/microbus:1
+      container_name: microbus
+      network_mode: bridge
+      build:
+        context: .
+      deploy:
+        resources:
+          limits:
+            memory: 1000M
+      ports:
+       - "8049:8049"
+      labels:
+       - "version=1.0.0"
